@@ -25,6 +25,8 @@ def ordenar(): #Método burbuja.
                 mediciones[j].update({'fecha':mediciones[j+1].get('fecha')})
                 mediciones[j+1].update({'fecha':temp})
 
+
+
 @app.route('/')
 def get():
     return jsonify(tipo_medicion)
@@ -96,7 +98,8 @@ def putOne(fecha):
         if(fecha in medicion['fecha']):
                 x = True
                 medicion ['valor'] = body['valor']
-    return 'Modificado' if x else 'No encontrado'
+                return jsonify(medicion)
+    return 'No encontrado'
 #Para modificar un valor, se pone la ruta http://127.0.0.1:4080/mediciones/<fecha> con método PUT
     #Donde fecha es la fecha que se quiere cambiar, y el valor se pone de tipo JSON en body de POSTMAN. De esta manera: {"valor:"número}
 
