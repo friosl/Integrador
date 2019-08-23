@@ -68,7 +68,7 @@ def getMayoresA(fecha):
 #http://127.0.0.1:4080/mediciones/getMayoresA/7 -> para valores
 #http://127.0.0.1:4080/mediciones/getMayoresA/<fecha> -> para fechas
 
-@app.route('/mediciones',methods=['POST']) #importante poner qué tipo de método será
+@app.route('/mediciones',methods=['POST']) 
 def postOne():
     now= datetime.now()
     body=request.json
@@ -79,7 +79,7 @@ def postOne():
 # Para eliminar un registro se debe poner la fecha en que se hizo. Con método POST
 # Con el link http://127.0.0.1:4080/mediciones/<fecha>
 
-@app.route('/mediciones',methods=['DELETE']) #importante poner qué tipo de método será
+@app.route('/mediciones/<string:fecha>',methods=['DELETE']) #importante poner qué tipo de método será
 def deleteOne(fecha):
     x = False
     for medicion in mediciones:
@@ -114,7 +114,13 @@ def cambiarValores(valor):
             medicion ['valor']=v2
     return "Método cambiarTodos"
 
-
+@app.route('/mediciones/deleteAll',methods=['DELETE'])
+def deleteAll():
+    global mediciones,mayoresFecha,mayoresValor
+    mediciones.clear()
+    mayoresFecha.clear()
+    mayores.clear()
+    return "Datos eliminados"
 #Se debe poner el link de esta manera: Usando el método PUT
     #http://127.0.0.1:4080/mediciones/cambiarTodos/num,num 
     # el primer número significa el valor a cambiar y el segundo, el valor por el que se va a cambiar.
