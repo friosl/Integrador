@@ -25,8 +25,6 @@ def ordenar(): #Método burbuja.
                 mediciones[j].update({'fecha':mediciones[j+1].get('fecha')})
                 mediciones[j+1].update({'fecha':temp})
 
-
-
 @app.route('/')
 def get():
     return jsonify(tipo_medicion)
