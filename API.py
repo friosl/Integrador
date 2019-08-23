@@ -124,10 +124,5 @@ def deleteAll():
 #Se debe poner el link de esta manera: Usando el método PUT
     #http://127.0.0.1:4080/mediciones/cambiarTodos/num,num 
     # el primer número significa el valor a cambiar y el segundo, el valor por el que se va a cambiar.
-#Cada archivo que tengamos debe tener el nombre de lo que es y sería como getAll.JSON 
-#Exportar la colección en PostMan
-#Montarlo a github donde esté el .py del código.
-
-#A cada punto se le puede dar export usando Collection v2.1 
 
 app.run(port=4080,debug=True)
