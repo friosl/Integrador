@@ -38,7 +38,7 @@ def getAll():
     return jsonify(mediciones)  
 
 # Lo que hay qué hacer: POST,GETALL,GET (que nos haya tocado) 
-#Hacer un sort en la lista de diccionarios para mostrarlo (por la originalidad xd)
+
 @app.route('/mediciones/getMayoresA/<string:fecha>',methods=['GET']) #importante poner qué tipo de método será
 def getMayoresA(fecha):
     mayoresFecha.clear()   #Evitar que se añadan los mismos datos
