@@ -119,7 +119,7 @@ def deleteAll():
     global mediciones,mayoresFecha,mayoresValor
     mediciones.clear()
     mayoresFecha.clear()
-    mayores.clear()
+    mayoresValores.clear()
     return "Datos eliminados"
 #Se debe poner el link de esta manera: Usando el método PUT
     #http://127.0.0.1:4080/mediciones/cambiarTodos/num,num 
